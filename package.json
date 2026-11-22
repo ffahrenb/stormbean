@@ -1,0 +1,23 @@
+{
+  "name": "weg-der-bohne",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Interaktive 3D-Visualisierung: Kaffee im Ursprung – Länder, Verarbeitung, Varietäten, Chemie, Klima",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "preview": "node scripts/serve.mjs",
+    "world": "node scripts/prep-world.mjs"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.0",
+    "world-atlas": "2.0.2",
+    "topojson-client": "3.1.0",
+    "@fontsource/saira-stencil-one": "5.1.0",
+    "@fontsource/archivo": "5.1.0"
+  }
+}
