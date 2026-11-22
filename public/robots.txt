@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sturmsstube.xyz/sitemap.xml
+Sitemap: https://stormbean.fyi/sitemap.xml

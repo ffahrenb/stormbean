@@ -62,9 +62,9 @@ Im Tab **Chemie → Röstprofil** bis zu drei Dateien laden, hineinziehen oder T
 - **Eigene Tabelle:** Komma, Semikolon oder Tab; Zeit als `mm:ss`, `hh:mm:ss`, Sekunden oder Minuten; Spalten für Zeit, BT und optional ET (Zuordnung im Panel änderbar). °F wird erkannt oder kann gewählt werden.
 - Berechnet: Wendepunkt, Trocknungsende (Ereignis oder BT ≥ 150 °C, einstellbar), First Crack (nur aus Ereignis, nie geschätzt), Phasenanteile, DTR, ΔBT und mittlere RoR in der Entwicklung, RoR-Kurve (Steigung über 30 s).
 
-## Veröffentlichen auf sturmsstube.xyz
+## Veröffentlichen auf stormbean.fyi
 
-Ziel: `https://sturmsstube.xyz` (Domain bei Porkbun), gehostet über GitHub Pages; `www.sturmsstube.xyz` leitet auf die Hauptadresse weiter. Canonical-URL, Vorschaubild (`og-image.jpg`), `robots.txt` und `sitemap.xml` sind bereits auf diese Domain eingestellt.
+Ziel: `https://stormbean.fyi`, gehostet über GitHub Pages; `www.stormbean.fyi` leitet auf die Hauptadresse weiter. Canonical-URL, Vorschaubild (`og-image.jpg`), `robots.txt` und `sitemap.xml` sind bereits auf diese Domain eingestellt.
 
 **Reihenfolge einhalten:** zuerst die Domain bei GitHub eintragen, dann DNS ändern – sonst kann jemand anderes die Domain mit einer eigenen Pages-Seite belegen.
 
@@ -73,12 +73,12 @@ Ziel: `https://sturmsstube.xyz` (Domain bei Porkbun), gehostet über GitHub Page
 1. Repository anlegen, z. B. `ffahrenb/weg-der-bohne`, Projekt auf `main` pushen.
    Hinweis: Mit GitHub Free funktioniert Pages nur bei **öffentlichen** Repositories; für private braucht es GitHub Pro oder Team.
 2. *Settings → Pages → Build and deployment → Source:* **GitHub Actions**. Der erste Push startet `.github/workflows/deploy.yml`.
-3. Empfohlen: Domain verifizieren unter *Profil-Settings → Pages → Add a domain* → `sturmsstube.xyz`. GitHub zeigt einen TXT-Eintrag an (Host `_github-pages-challenge-ffahrenb`).
-4. *Repository → Settings → Pages → Custom domain:* `sturmsstube.xyz` eintragen, speichern.
+3. Empfohlen: Domain verifizieren unter *Profil-Settings → Pages → Add a domain* → `stormbean.fyi`. GitHub zeigt einen TXT-Eintrag an (Host `_github-pages-challenge-ffahrenb`).
+4. *Repository → Settings → Pages → Custom domain:* `stormbean.fyi` eintragen, speichern.
 
-### 2. DNS bei Porkbun
+### 2. DNS beim Domain-Anbieter (Beispiel Porkbun)
 
-*Account → Domain Management → sturmsstube.xyz → Details → DNS Records:*
+Bei Porkbun: *Account → Domain Management → stormbean.fyi → Details → DNS Records*. Bei anderen Anbietern heissen die Menüs anders, die Einträge sind dieselben.
 
 1. **Löschen:** die Standard-Einträge, die auf `pixie.porkbun.com` zeigen (ALIAS für die Hauptdomain und CNAME mit Host `*`). Der Platzhalter-Eintrag `*` muss weg – GitHub rät von Wildcard-Einträgen ab. Kein ALIAS auf `@` zusätzlich zu den A-Einträgen stehen lassen.
 2. **Anlegen:**
@@ -101,14 +101,14 @@ Porkbun bietet unter DNS Records auch eine Schnellverbindung für GitHub Pages a
 ### 3. HTTPS und Kontrolle
 
 1. Warten, bis *Settings → Pages* «DNS check successful» meldet (Minuten bis einige Stunden), dann **Enforce HTTPS** aktivieren.
-2. Prüfen: `dig sturmsstube.xyz +short` liefert die vier 185.199.x.153-Adressen, `dig www.sturmsstube.xyz +short` zeigt `ffahrenb.github.io`.
+2. Prüfen: `dig stormbean.fyi +short` liefert die vier 185.199.x.153-Adressen, `dig www.stormbean.fyi +short` zeigt `ffahrenb.github.io`.
 3. Hängt das Zertifikat, die Custom Domain in den Pages-Settings entfernen und neu eintragen.
 
 Bei Actions-Deployments ist keine `CNAME`-Datei im Repo nötig. Doku: <https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site>
 
 ### Alternativen
 
-- **Cloudflare Pages oder Netlify:** Repository verbinden, Build-Befehl `npm run build`, Ausgabeordner `dist`, Node 20; Domain im jeweiligen Dashboard hinzufügen und die dort angezeigten DNS-Einträge bei Porkbun setzen.
+- **Cloudflare Pages oder Netlify:** Repository verbinden, Build-Befehl `npm run build`, Ausgabeordner `dist`, Node 20; Domain im jeweiligen Dashboard hinzufügen und die dort angezeigten DNS-Einträge beim Domain-Anbieter setzen.
 - **Eigener Webserver:** `npm run build`, dann den Inhalt von `dist/` per SFTP ins Web-Verzeichnis kopieren.
 
 Für eine andere Domain die Adresse in `public/index.html` (canonical, og:url, og:image), `public/robots.txt` und `public/sitemap.xml` ersetzen.
