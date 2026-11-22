@@ -1,6 +1,6 @@
 # Stormbean – Der Weg der Bohne
 
-Live: <https://stormbean.fyi> · Repository: [ffahrenb/stormbean](https://github.com/ffahrenb/stormbean)
+Live: <https://stormbean.fyi> · Repository: [ffahrenb/stormbean.fyi](https://github.com/ffahrenb/stormbean.fyi)
 
 Interaktive 3D-Visualisierung für Baristas und Röster:innen: Kaffee im Ursprung – Länder, Verarbeitung, Varietäten, Chemie, Klimarisiko und eigene Röstprofile. Deutsch/Englisch, hell/dunkel, Desktop und Smartphone.
 
@@ -72,7 +72,7 @@ Ziel: `https://stormbean.fyi`, gehostet über GitHub Pages; `www.stormbean.fyi` 
 
 ### 1. Repository und Pages
 
-1. Repository: `ffahrenb/stormbean` (öffentlich – mit GitHub Free laufen Actions und Pages nur bei öffentlichen Repositories gratis).
+1. Repository: `ffahrenb/stormbean.fyi` (öffentlich – mit GitHub Free laufen Actions und Pages nur bei öffentlichen Repositories gratis).
 2. *Settings → Pages → Build and deployment → Source:* **GitHub Actions**. Der erste Push startet `.github/workflows/deploy.yml`.
 3. Empfohlen: Domain verifizieren unter *Profil-Settings → Pages → Add a domain* → `stormbean.fyi`. GitHub zeigt einen TXT-Eintrag an (Host `_github-pages-challenge-ffahrenb`).
 4. *Repository → Settings → Pages → Custom domain:* `stormbean.fyi` eintragen, speichern.
